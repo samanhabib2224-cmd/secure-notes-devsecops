@@ -1,0 +1,166 @@
+/* ========== GOOGLE FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* ========== CSS VARIABLES ========== */
+:root {
+  --bg-primary: #06020f;
+  --bg-secondary: #0d0618;
+  --purple-deep: #4a1d96;
+  --purple-mid: #7c3aed;
+  --purple-bright: #a855f7;
+  --purple-light: #c084fc;
+  --purple-glow: rgba(168, 85, 247, 0.25);
+  --glass-bg: rgba(168, 85, 247, 0.06);
+  --glass-border: rgba(168, 85, 247, 0.18);
+  --text-primary: #f5f0ff;
+  --text-secondary: #a89bc2;
+  --text-muted: #6b5f82;
+  --gradient-main: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c026d3 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08));
+  --shadow-glow: 0 0 40px rgba(168, 85, 247, 0.2);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== GLOBAL RESET ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 58, 237, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(192, 38, 211, 0.12) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--purple-mid);
+  border-radius: 10px;
+}
+
+/* ========== INPUTS & TEXTAREA ========== */
+input, textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  outline: none;
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--purple-bright);
+  background: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18), var(--shadow-glow);
+}
+
+/* ========== BUTTONS ========== */
+button {
+  padding: 13px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  background: var(--gradient-main);
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.55);
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ========== LINKS ========== */
+a {
+  color: var(--purple-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* ========== GLASS CARD ========== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 36px;
+  background: rgba(6, 2, 15, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  margin-left: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 7px 16px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.navbar a:hover {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
