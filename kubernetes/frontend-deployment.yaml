@@ -1,26 +1,46 @@
+# apiVersion: apps/v1
+# kind: Deployment
+
+# metadata:
+#   name: frontend
+
+# spec:
+#   replicas: 1
+
+#   selector:
+#     matchLabels:
+#       app: frontend
+
+#   template:
+#     metadata:
+#       labels:
+#         app: frontend
+
+#     spec:
+#       containers:
+#         - name: frontend
+#           image: sammanhabib2224/secure-notes-frontend:latest
+
+#           ports:
+#             - containerPort: 5173
+
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: frontend
-
 spec:
   replicas: 1
-
   selector:
     matchLabels:
       app: frontend
-
   template:
     metadata:
       labels:
         app: frontend
-
     spec:
       containers:
         - name: frontend
           image: sammanhabib2224/secure-notes-frontend:latest
-
+          imagePullPolicy: Always
           ports:
             - containerPort: 5173
-
